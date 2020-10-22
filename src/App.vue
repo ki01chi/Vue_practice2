@@ -1,28 +1,39 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Button title="fuga" :onClick="click"/>
+    <Header />
+    <div class="app-container">
+      <SideMenu />
+      <Main />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import 'normalize.css';
+  import Header from './components/Header';
+  import SideMenu from './components/SideMenu';
+  import Main from './components/Main';
+  import Button from './components/Button';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    components: {
+      Header,
+      SideMenu,
+      Main,
+      Button
+    },
+    methods: {
+      click() {
+        console.log('クリック！');
+      }
+    }
   }
-}
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.app-container {
+  display: flex;
+  padding-top: 60px;
 }
 </style>
