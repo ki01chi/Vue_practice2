@@ -1,17 +1,34 @@
 <template>
   <main class="main-container">
-    <TextBox />
+    <TextBox :onPost="addMessages"/>
     <div class="devider"></div>
-    mainが入るよ
+    <MessageList :messages="reversedMessages"/>
   </main>
 </template>
 
 <script>
 import TextBox from './TextBox';
+import MessageList from './MessageList';
 
 export default {
   components: {
     TextBox,
+    MessageList
+  },
+  data() {
+    return {
+      messages: []
+    }
+  },
+  computed: {
+    reversedMessages() {
+      return this.messages.slice().reverse();
+    }
+  },
+  methods: {
+    addMessages(message) {
+      this.messages.push(message);
+    }
   }
 }
 </script>
