@@ -8,7 +8,7 @@
     ></textarea>
     <div class="textbox-button">
       <Button 
-        title="投稿"
+        title="送信"
         :onClick="post"/>
     </div>
   </div>
