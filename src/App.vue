@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Button title="fuga" :onClick="click"/>
     <Header />
     <div class="app-container">
       <SideMenu />
@@ -14,20 +13,13 @@
   import Header from './components/Header';
   import SideMenu from './components/SideMenu';
   import Main from './components/Main';
-  import Button from './components/Button';
 
   export default {
     components: {
       Header,
       SideMenu,
       Main,
-      Button
     },
-    methods: {
-      click() {
-        console.log('クリック！');
-      }
-    }
   }
 </script>
 
