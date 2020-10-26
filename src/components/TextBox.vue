@@ -8,7 +8,7 @@
     ></textarea>
     <div class="textbox-button">
       <Button 
-        title="送信"
+        title="投稿"
         :onClick="post"/>
     </div>
   </div>
@@ -23,13 +23,6 @@ export default {
     Button
   },
 
-  props: {
-    onPost: {
-      type: Function,
-      required: true
-    }
-  },
-
   data() {
     return {
       body: '',
@@ -38,21 +31,7 @@ export default {
 
   methods : {
     post() {
-      if(!this.body) {
-        alert('何も表示されてません');
-        return;
-      }
-
-      const newMessage = this.createMessage();
-      this.onPost(newMessage);
-      this.body = '';
-    },
-
-    createMessage() {
-      return {
-        date: new Date().toLocaleString(),
-        body: this.body
-      }
+      console.log('ポスト！');
     }
   },
 }
